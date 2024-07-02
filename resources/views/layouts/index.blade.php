@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
+    @include('layouts._partials.messages')
     @yield('body')
     <footer>
         <!-- Tu pie de página aquí -->

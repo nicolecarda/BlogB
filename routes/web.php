@@ -9,7 +9,11 @@ use App\Http\Middleware\LoginMiddleware;
 
 
 
-Route::get('/', [UserController::class, 'login']);
+Route::get('/', [UserController::class, 'login'])->name('users.login');
+
+Route::get('users/register', [UserController::class, 'register'])->name('users.register');
+
+Route::post('users/register', [UserController::class, 'store'])->name('users.store');
 
 Route::middleware(LoginMiddleware::class)->group(function () {
 
@@ -19,6 +23,9 @@ Route::middleware(LoginMiddleware::class)->group(function () {
 
      Route::resource('posts', PostController::class);
 
-     Route::resource('users', UserController::class);
+     Route::resource('users', UserController::class)->except(['register', 'store', 'index'] );
+    
 });
+
+
 

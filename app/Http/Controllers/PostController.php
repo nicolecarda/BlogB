@@ -10,9 +10,10 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-       
+        $posts = Post::all();
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -26,11 +27,11 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function showAll(Request $request)   //index con metodo post
-    {
-        $posts = Post::all();
-        return view('posts.index', compact('posts'));
-    }
+    // public function showAll(Request $request)   //index con metodo post
+    // {
+    //     $posts = Post::all();
+    //     return view('posts.index', compact('posts'));
+    // }
 
     /**
      * Display the specified resource.

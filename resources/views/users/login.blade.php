@@ -7,7 +7,7 @@
     <section class="form-login">
         <h1>Welcome</h1>
 
-            <form method="POST" action="{{route('posts.showAll')}}"> <!-- Antes de llegar a esta ruta pasa por el middleware -->
+            <form method="POST" action="{{route('users.login')}}"> <!-- Antes de llegar a esta ruta pasa por el middleware -->
             
                 @csrf <!-- CSRF protection -->
 
